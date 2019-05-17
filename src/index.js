@@ -1,10 +1,20 @@
 import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
 import { render } from "react-dom";
 
 class Button extends Component {
+  static defaultProps = {
+    children: "Salvar"
+  };
+
+  static propTypes = {
+    onClick: PropTypes.func.isRequired,
+    childre: PropTypes.string
+  };
+
   render() {
     return (
-      <a href="" onClick={this.props.onClick}>
+      <a onClick={this.props.onClick} style={{ background: "#F00" }}>
         {this.props.children}
       </a>
     );
